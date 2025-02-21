@@ -4,6 +4,13 @@
 <xacro:include filename="$(find antrobot_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find antrobot_description)/urdf/antrobot.trans" />
 <xacro:include filename="$(find antrobot_description)/urdf/antrobot.gazebo" />
+
+<link name="dummy"/>
+<joint name="dummy_joint" type="fixed">
+<parent link="dummy"/>
+<child link="base_link"/>
+</joint>
+
 <link name="base_link">
   <inertial>
     <origin xyz="-0.015797588649762044 0.0004259128735104659 0.06300813597085958" rpy="0 0 0"/>
@@ -24,6 +31,8 @@
     </geometry>
   </collision>
 </link>
+
+<link name="base_footprint"/>
 
 <link name="wheel_left_link_1">
   <inertial>
@@ -74,14 +83,14 @@
     <inertia ixx="2.5e-05" iyy="2.5e-05" izz="3.6e-05" ixy="0.0" iyz="0.0" ixz="-1e-06"/>
   </inertial>
   <visual>
-    <origin xyz="-0.0 -0.0 -0.155" rpy="0 0 0"/>
+    <origin xyz="-0.0 -0.0 -0.186" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.0 -0.0 -0.155" rpy="0 0 0"/>
+    <origin xyz="-0.0 -0.0 -0.186" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -145,21 +154,27 @@
 </joint>
 
 <joint name="rplidar_joint" type="fixed">
-  <origin xyz="0.0 0.0 0.155" rpy="0 0 0"/>
+  <origin xyz="0.0 0.0 0.186" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="rplidar_link_1"/>
 </joint>
 
 <joint name="rpicam_joint" type="fixed">
-  <origin xyz="0.126235 8.8e-05 0.031943" rpy="0 0 0"/>
+  <origin xyz="0.126235 8.8e-05 0.031943" rpy="0 0.0523599 0"/>
   <parent link="base_link"/>
   <child link="rpicam_link_1"/>
 </joint>
 
 <joint name="realsense_joint" type="fixed">
-  <origin xyz="0.111521 0.00012 0.132217" rpy="0 0 0"/>
+  <origin xyz="0.111521 0.00012 0.132217" rpy="0 0.0523599 0"/>
   <parent link="base_link"/>
   <child link="realsense_link_1"/>
+</joint>
+
+<joint name="base_footprint_joint" type="fixed">
+  <origin xyz="0 0 -0.035" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="base_footprint"/>
 </joint>
 
 </robot>
