@@ -8,9 +8,15 @@
 <link name="robot_origin">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.0001 0.0001 0.0001"/>
+    </geometry>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.0001 0.0001 0.0001"/>
+    </geometry>
   </collision>
 </link>
 
@@ -25,7 +31,7 @@
     <geometry>
       <mesh filename="file://$(find antrobot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="light_grey"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -48,7 +54,7 @@
     <geometry>
       <mesh filename="file://$(find antrobot_description)/meshes/wheel_left_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="-0.029613 -0.1095 0.005" rpy="0 0 0"/>
@@ -69,7 +75,7 @@
     <geometry>
       <mesh filename="file://$(find antrobot_description)/meshes/wheel_right_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="-0.029613 0.1095 0.005" rpy="0 0 0"/>
@@ -90,7 +96,7 @@
     <geometry>
       <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="red"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.186" rpy="0 0 0"/>
@@ -111,7 +117,7 @@
     <geometry>
       <mesh filename="file://$(find antrobot_description)/meshes/rpicam_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="yellow"/>
   </visual>
   <collision>
     <origin xyz="-0.126235 -8.8e-05 -0.031943" rpy="0 0 0"/>
@@ -132,7 +138,7 @@
     <geometry>
       <mesh filename="file://$(find antrobot_description)/meshes/realsense_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="yellow"/>
   </visual>
   <collision>
     <origin xyz="-0.111521 -0.00012 -0.132217" rpy="0 0 0"/>

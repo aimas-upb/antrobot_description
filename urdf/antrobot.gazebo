@@ -15,35 +15,35 @@
 </gazebo>
 
 <gazebo reference="wheel_left_link">
-  <material>${body_color}</material>
+  <material>Gazebo/Blue</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="wheel_right_link">
-  <material>${body_color}</material>
+  <material>Gazebo/Blue</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="rplidar_link">
-  <material>${body_color}</material>
+  <material>Gazebo/Red</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="rpicam_link">
-  <material>${body_color}</material>
+  <material>Gazebo/Yellow</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="realsense_link">
-  <material>${body_color}</material>
+  <material>Gazebo/Yellow</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
