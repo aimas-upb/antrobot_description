@@ -5,11 +5,14 @@
 <xacro:include filename="$(find antrobot_description)/urdf/antrobot.trans" />
 <xacro:include filename="$(find antrobot_description)/urdf/antrobot.gazebo" />
 
-<link name="dummy"/>
-<joint name="dummy_joint" type="fixed">
-<parent link="dummy"/>
-<child link="base_link"/>
-</joint>
+<link name="robot_origin">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </collision>
+</link>
 
 <link name="base_link">
   <inertial>
@@ -34,7 +37,7 @@
 
 <link name="base_footprint"/>
 
-<link name="wheel_left_link_1">
+<link name="wheel_left_link">
   <inertial>
     <origin xyz="-1.2728583304935648e-06 -0.0023063066184155906 6.00040961839729e-08" rpy="0 0 0"/>
     <mass value="0.010031169181516577"/>
@@ -43,19 +46,19 @@
   <visual>
     <origin xyz="-0.029613 -0.1095 0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/wheel_left_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find antrobot_description)/meshes/wheel_left_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.029613 -0.1095 0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/wheel_left_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find antrobot_description)/meshes/wheel_left_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="wheel_right_link_1">
+<link name="wheel_right_link">
   <inertial>
     <origin xyz="1.4357516585211672e-06 0.002306307129465418 6.000408169209298e-08" rpy="0 0 0"/>
     <mass value="0.010031169181516577"/>
@@ -64,19 +67,19 @@
   <visual>
     <origin xyz="-0.029613 0.1095 0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/wheel_right_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find antrobot_description)/meshes/wheel_right_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.029613 0.1095 0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/wheel_right_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find antrobot_description)/meshes/wheel_right_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="rplidar_link_1">
+<link name="rplidar_link">
   <inertial>
     <origin xyz="0.0030931959904156093 -0.0003163045555262638 0.021005003394948152" rpy="0 0 0"/>
     <mass value="0.044595018191553856"/>
@@ -85,19 +88,19 @@
   <visual>
     <origin xyz="-0.0 -0.0 -0.186" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.186" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="rpicam_link_1">
+<link name="rpicam_link">
   <inertial>
     <origin xyz="-0.006587669853958977 5.666710231481823e-05 1.5965148283683672e-05" rpy="0 0 0"/>
     <mass value="0.0016269917920669669"/>
@@ -106,19 +109,19 @@
   <visual>
     <origin xyz="-0.126235 -8.8e-05 -0.031943" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/rpicam_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find antrobot_description)/meshes/rpicam_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.126235 -8.8e-05 -0.031943" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/rpicam_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find antrobot_description)/meshes/rpicam_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="realsense_link_1">
+<link name="realsense_link">
   <inertial>
     <origin xyz="-0.012605676757880976 0.001112839462886813 0.0006324082805583275" rpy="0 0 0"/>
     <mass value="0.04843109891123876"/>
@@ -127,14 +130,14 @@
   <visual>
     <origin xyz="-0.111521 -0.00012 -0.132217" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/realsense_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find antrobot_description)/meshes/realsense_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.111521 -0.00012 -0.132217" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/realsense_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find antrobot_description)/meshes/realsense_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -142,33 +145,33 @@
 <joint name="wheel_left_joint" type="continuous">
   <origin xyz="0.029613 0.1095 -0.005" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="wheel_left_link_1"/>
+  <child link="wheel_left_link"/>
   <axis xyz="-0.0 1.0 -0.0"/>
 </joint>
 
 <joint name="wheel_right_joint" type="continuous">
   <origin xyz="0.029613 -0.1095 -0.005" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="wheel_right_link_1"/>
+  <child link="wheel_right_link"/>
   <axis xyz="0.0 -1.0 0.0"/>
 </joint>
 
 <joint name="rplidar_joint" type="fixed">
   <origin xyz="0.0 0.0 0.186" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="rplidar_link_1"/>
+  <child link="rplidar_link"/>
 </joint>
 
 <joint name="rpicam_joint" type="fixed">
   <origin xyz="0.126235 8.8e-05 0.031943" rpy="0 0.0523599 0"/>
   <parent link="base_link"/>
-  <child link="rpicam_link_1"/>
+  <child link="rpicam_link"/>
 </joint>
 
 <joint name="realsense_joint" type="fixed">
   <origin xyz="0.111521 0.00012 0.132217" rpy="0 0.0523599 0"/>
   <parent link="base_link"/>
-  <child link="realsense_link_1"/>
+  <child link="realsense_link"/>
 </joint>
 
 <joint name="base_footprint_joint" type="fixed">
@@ -176,5 +179,12 @@
   <parent link="base_link"/>
   <child link="base_footprint"/>
 </joint>
+
+<joint name="base_joint" type="fixed">
+<origin xyz="0 0 0.035" rpy="0 0 0"/>
+<parent link="robot_origin"/>
+<child link="base_link"/>
+</joint>
+
 
 </robot>
