@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<robot name="antrobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find antrobot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find antrobot_description)/urdf/antrobot.trans" />
+<xacro:include filename="$(find antrobot_description)/urdf/antrobot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.015797588649762044 0.0004259128735104659 0.06300813597085958" rpy="0 0 0"/>
+    <mass value="1.5945437281135275"/>
+    <inertia ixx="0.008584" iyy="0.010164" izz="0.010169" ixy="-6e-06" iyz="-3.3e-05" ixz="-0.0002"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_left_link_1">
+  <inertial>
+    <origin xyz="-1.2728583304935648e-06 -0.0023063066184155906 6.00040961839729e-08" rpy="0 0 0"/>
+    <mass value="0.010031169181516577"/>
+    <inertia ixx="3e-06" iyy="6e-06" izz="3e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.029613 -0.1095 0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/wheel_left_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.029613 -0.1095 0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/wheel_left_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_link_1">
+  <inertial>
+    <origin xyz="1.4357516585211672e-06 0.002306307129465418 6.000408169209298e-08" rpy="0 0 0"/>
+    <mass value="0.010031169181516577"/>
+    <inertia ixx="3e-06" iyy="6e-06" izz="3e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.029613 0.1095 0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/wheel_right_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.029613 0.1095 0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/wheel_right_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rplidar_link_1">
+  <inertial>
+    <origin xyz="0.0030931959904156093 -0.0003163045555262638 0.021005003394948152" rpy="0 0 0"/>
+    <mass value="0.044595018191553856"/>
+    <inertia ixx="2.5e-05" iyy="2.5e-05" izz="3.6e-05" ixy="0.0" iyz="0.0" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rpicam_link_1">
+  <inertial>
+    <origin xyz="-0.006587669853958977 5.666710231481823e-05 1.5965148283683672e-05" rpy="0 0 0"/>
+    <mass value="0.0016269917920669669"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.126235 -8.8e-05 -0.031943" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/rpicam_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.126235 -8.8e-05 -0.031943" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/rpicam_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="realsense_link_1">
+  <inertial>
+    <origin xyz="-0.012605676757880976 0.001112839462886813 0.0006324082805583275" rpy="0 0 0"/>
+    <mass value="0.04843109891123876"/>
+    <inertia ixx="2.9e-05" iyy="4e-06" izz="3e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.111521 -0.00012 -0.132217" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/realsense_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.111521 -0.00012 -0.132217" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find antrobot_description)/meshes/realsense_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="wheel_left_joint" type="continuous">
+  <origin xyz="0.029613 0.1095 -0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_left_link_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="wheel_right_joint" type="continuous">
+  <origin xyz="0.029613 -0.1095 -0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_right_link_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="rplidar_joint" type="fixed">
+  <origin xyz="0.0 0.0 0.155" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rplidar_link_1"/>
+</joint>
+
+<joint name="rpicam_joint" type="fixed">
+  <origin xyz="0.126235 8.8e-05 0.031943" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rpicam_link_1"/>
+</joint>
+
+<joint name="realsense_joint" type="fixed">
+  <origin xyz="0.111521 0.00012 0.132217" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="realsense_link_1"/>
+</joint>
+
+</robot>
