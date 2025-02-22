@@ -5,6 +5,7 @@
 <xacro:include filename="$(find antrobot_description)/urdf/antrobot.trans" />
 <xacro:include filename="$(find antrobot_description)/urdf/antrobot.gazebo" />
 
+<!-- This must be checked, we don't want to fix the robot to the origin -->
 <link name="robot_origin">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -19,6 +20,20 @@
     </geometry>
   </collision>
 </link>
+
+<joint name="base_joint" type="fixed">
+<origin xyz="0 0 0.035" rpy="0 0 0"/>
+<parent link="robot_origin"/>
+<child link="base_link"/>
+</joint> 
+
+
+<!-- <link name="robot_origin" />
+
+<joint name="robot_origin" type="fixed">
+  <parent link="base_footprint" />
+  <child link="base_link" />
+</joint> -->
 
 <link name="base_link">
   <inertial>
@@ -186,11 +201,6 @@
   <child link="base_footprint"/>
 </joint>
 
-<joint name="base_joint" type="fixed">
-<origin xyz="0 0 0.035" rpy="0 0 0"/>
-<parent link="robot_origin"/>
-<child link="base_link"/>
-</joint>
 
 
 </robot>

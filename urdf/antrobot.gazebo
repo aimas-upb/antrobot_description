@@ -3,9 +3,21 @@
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
-<gazebo>
+<!-- TODO: Fix this for gazebo ignition -->
+<!-- <gazebo>
   <plugin name="control" filename="libgazebo_ros_control.so"/>
-</gazebo>
+</gazebo> -->
+<!-- <gazebo>
+  <plugin name="ign_ros2_control" filename="libign_ros2_control.so">
+    <ros>
+      <namespace>/</namespace>
+      <remapping>joint_states:=/joint_states</remapping>
+    </ros>
+    <robotNamespace>/</robotNamespace>
+    <robotSimType>ign_ros2_control/DefaultRobotHWSim</robotSimType>
+  </plugin>
+</gazebo> -->
+
 <gazebo reference="base_link">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
@@ -48,5 +60,4 @@
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
-
 </robot>
