@@ -35,7 +35,12 @@ def generate_launch_description():
                 'launch',
                 'gz_sim.launch.py'
             ])
-        ])
+        ]),
+        launch_arguments={'world': PathJoinSubstitution([
+            FindPackageShare('antrobot_description'),
+            'worlds',
+            'emtpty_world.sdf'
+        ])}.items()
     )
 
     # Updated spawn node (check ros_gz_sim documentation for specifics)
