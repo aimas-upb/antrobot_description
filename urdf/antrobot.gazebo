@@ -1,6 +1,16 @@
 <?xml version="1.0" ?>
 <robot name="antrobot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
+<!-- 
+Attention: The approach has changed for the new Gazebo 
+      Transform the URDF in actual SDF with the required plugins.
+      You need to develop full on packages according to the ignition gazebo template,
+      where fortress is compatible with humble.
+
+      This file is left here for visualization purposes as a strating point,
+      but otherwise usable for simulations or digital twins.
+-->
+
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
 <!-- TODO: Fix this for gazebo ignition -->
