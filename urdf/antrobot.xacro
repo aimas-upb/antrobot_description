@@ -35,7 +35,14 @@
 
 <xacro:property name="pitch_offset" value="0 0.0523599"/>
 
-<link name="base_link">
+<!-- Workaround for the KDL Tree -->
+<!-- <link name="dummy"/>
+<joint name="dummy_joint" type="fixed">
+<parent link="dummy"/>
+<child link="base_link"/>
+</joint> -->
+
+<link name='base_link'>
   <inertial>
     <origin xyz="-0.015797588649762044 0.0004259128735104659 0.06300813597085958" rpy="0 0 0"/>
     <mass value="1.5945437281135275"/>
