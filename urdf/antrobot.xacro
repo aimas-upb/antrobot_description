@@ -51,14 +51,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="light_grey"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -74,14 +74,14 @@
   <visual>
     <origin xyz="-${wheel_x_offset} -${wheel_y_offset} ${wheel_z_offset}" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/wheel_left_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/wheel_left_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="-${wheel_x_offset} -${wheel_y_offset} ${wheel_z_offset}" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/wheel_left_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/wheel_left_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -95,14 +95,14 @@
   <visual>
     <origin xyz="-${wheel_x_offset} ${wheel_y_offset} ${wheel_z_offset}" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/wheel_right_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/wheel_right_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="-${wheel_x_offset} -${wheel_y_offset} ${wheel_z_offset}" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/wheel_right_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/wheel_right_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -116,14 +116,14 @@
   <visual>
     <origin xyz="-${rplidar_x_offset} -${rplidar_y_offset} -${rplidar_z_offset}" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/rplidar_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="red"/>
   </visual>
   <collision>
     <origin xyz="-${rplidar_x_offset} -${rplidar_y_offset} -${rplidar_z_offset}" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/rplidar_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/rplidar_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -137,14 +137,14 @@
   <visual>
     <origin xyz="-${rpicam_x_offset} -${rpicam_y_offset} -${rpicam_z_offset}" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/rpicam_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/rpicam_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="yellow"/>
   </visual>
   <collision>
     <origin xyz="-${rpicam_x_offset} -${rpicam_y_offset} -${rpicam_z_offset}" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/rpicam_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/rpicam_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -158,14 +158,14 @@
   <visual>
     <origin xyz="-${realsense_x_offset} -${realsense_y_offset} -${realsense_z_offset}" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/realsense_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/realsense_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="yellow"/>
   </visual>
   <collision>
     <origin xyz="-${realsense_x_offset} -${realsense_y_offset} -${realsense_z_offset}" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find antrobot_description)/meshes/realsense_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://antrobot_description/meshes/realsense_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -191,7 +191,7 @@
 </joint>
 
 <joint name="rpicam_joint" type="fixed">
-  <origin xyz="${rpicam_x_offset} ${rpicam_y_offset} ${rpicam_z_offset}" rpy="0 0.0523599 0"/>
+  <origin xyz="${rpicam_x_offset} ${rpicam_y_offset} ${rpicam_z_offset}" rpy="0 0 0.0523599 0"/>
   <parent link="base_link"/>
   <child link="rpicam_link"/>
 </joint>

@@ -7,6 +7,7 @@
   <maintainer email="dan_marius.novischi@upb.ro">author</maintainer>
   <license>LGPL-3.0-only</license>
 
+  <depend>urdf</depend>
   <depend>xacro</depend>
   <depend>rviz2</depend>
   <depend>robot_state_publisher</depend>
