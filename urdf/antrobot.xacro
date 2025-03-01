@@ -33,7 +33,7 @@
 <xacro:property name="realsense_y_offset" value="0.00012"/>
 <xacro:property name="realsense_z_offset" value="0.132217"/>
 
-<xacro:property name="pitch_offset" value="0 0.0523599"/>
+<!-- <xacro:property name="pitch_offset" value="0 0.0523599"/> -->
 
 <!-- Workaround for the KDL Tree -->
 <!-- <link name="dummy"/>
@@ -191,7 +191,7 @@
 </joint>
 
 <joint name="rpicam_joint" type="fixed">
-  <origin xyz="${rpicam_x_offset} ${rpicam_y_offset} ${rpicam_z_offset}" rpy="0 0 0.0523599 0"/>
+  <origin xyz="${rpicam_x_offset} ${rpicam_y_offset} ${rpicam_z_offset}" rpy="0 0.0523599 0"/>
   <parent link="base_link"/>
   <child link="rpicam_link"/>
 </joint>
