@@ -5,7 +5,8 @@
 <!-- TODO: Inertial can be aproximated with cilinders if the sim is slow -->
 
 <xacro:include filename="$(find antrobot_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find antrobot_description)/urdf/antrobot.trans" />
+<!-- This left over from gazebo classic not needed in gazbo ignition -->
+<!-- <xacro:include filename="$(find antrobot_description)/urdf/antrobot.trans" /> -->
 <xacro:include filename="$(find antrobot_description)/urdf/antrobot.gazebo" />
 
 <!-- the robot wheel radius in meters -->
@@ -100,7 +101,7 @@
     <material name="blue"/>
   </visual>
   <collision>
-    <origin xyz="-${wheel_x_offset} -${wheel_y_offset} ${wheel_z_offset}" rpy="0 0 0"/>
+    <origin xyz="-${wheel_x_offset} ${wheel_y_offset} ${wheel_z_offset}" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://antrobot_description/meshes/wheel_right_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
